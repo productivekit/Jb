@@ -1,1 +1,764 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ProductiveKit – Productivity Website Templates</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f6f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #5b4bdb;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #5b4bdb;
+        }
+
+        .flippa-btn {
+            background: #5b4bdb;
+            color: white !important;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+        .flippa-btn:hover {
+            background: #4638b8;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 90px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background: linear-gradient(135deg, #ffffff, #f1efff);
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: #5b4bdb;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .primary-btn {
+            background: #5b4bdb;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #4638b8;
+        }
+
+        .secondary-btn {
+            border: 1px solid #5b4bdb;
+            color: #5b4bdb;
+            background: white;
+        }
+
+        .secondary-btn:hover {
+            background: #f0eeff;
+        }
+
+        /* DASHBOARD */
+        .dashboard {
+            width: 470px;
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-header h3 {
+            color: #333;
+        }
+
+        .status {
+            background: #e7f8ed;
+            color: #24934b;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .task {
+            background: #f7f7fb;
+            padding: 14px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .task strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .task small {
+            color: #777;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            background: #f7f7fb;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .stat h3 {
+            color: #5b4bdb;
+        }
+
+        .stat p {
+            font-size: 12px;
+            color: #777;
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        /* PRODUCTS */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            background: #eeeaff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .product-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #5b4bdb;
+        }
+
+        .buy-btn {
+            display: block;
+            text-align: center;
+            background: #5b4bdb;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .buy-btn:hover {
+            background: #4638b8;
+        }
+
+        /* ABOUT */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .faq {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .faq h3 {
+            margin-bottom: 8px;
+        }
+
+        .faq p {
+            color: #666;
+        }
+
+        /* CTA */
+        .cta {
+            background: #5b4bdb;
+            color: white;
+            text-align: center;
+            padding: 70px 8%;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: white;
+            color: #5b4bdb;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #171717;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1000px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .dashboard {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav ul li:not(:last-child) {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 5%;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">ProductiveKit</div>
+
+        <ul>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
+
+            <li>
+                <a
+                    href="https://flippa.com/lps/sell-websites/"
+                    target="_blank"
+                    class="flippa-btn">
+                    Sell on Flippa
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Build better.<br>
+                <span>Work smarter.</span>
+            </h1>
+
+            <p>
+                Modern productivity website templates designed
+                for creators, students, freelancers, and businesses.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#products" class="primary-btn">
+                    Explore Templates
+                </a>
+
+                <a href="#about" class="secondary-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- DASHBOARD PREVIEW -->
+        <div class="dashboard">
+
+            <div class="dashboard-header">
+                <h3>My Productivity</h3>
+                <span class="status">Active</span>
+            </div>
+
+            <div class="task">
+                <strong>Finish website project</strong>
+                <small>Due today</small>
+            </div>
+
+            <div class="task">
+                <strong>Study JavaScript</strong>
+                <small>Due tomorrow</small>
+            </div>
+
+            <div class="task">
+                <strong>Plan weekly goals</strong>
+                <small>Friday</small>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h3>12</h3>
+                    <p>Tasks</p>
+                </div>
+
+                <div class="stat">
+                    <h3>8</h3>
+                    <p>Done</p>
+                </div>
+
+                <div class="stat">
+                    <h3>67%</h3>
+                    <p>Progress</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section id="products">
+
+        <div class="section-title">
+
+            <h2>Productivity Templates</h2>
+
+            <p>
+                Ready-to-use website templates for your next project.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card">
+
+                <div class="product-icon">✓</div>
+
+                <h3>TaskFlow</h3>
+
+                <p>
+                    Simple and modern task management
+                    website template.
+                </p>
+
+                <div class="price">₱149</div>
+
+                <a
+                    href="https://flippa.com/lps/sell-websites/"
+                    target="_blank"
+                    class="buy-btn">
+                    Buy Now
+                </a>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card">
+
+                <div class="product-icon">📚</div>
+
+                <h3>StudyBoard</h3>
+
+                <p>
+                    Clean productivity dashboard
+                    designed for students.
+                </p>
+
+                <div class="price">₱129</div>
+
+                <a
+                    href="https://flippa.com/lps/sell-websites/"
+                    target="_blank"
+                    class="buy-btn">
+                    Buy Now
+                </a>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card">
+
+                <div class="product-icon">⏱</div>
+
+                <h3>FocusTime</h3>
+
+                <p>
+                    Minimal productivity website
+                    focused on time management.
+                </p>
+
+                <div class="price">₱99</div>
+
+                <a
+                    href="https://flippa.com/lps/sell-websites/"
+                    target="_blank"
+                    class="buy-btn">
+                    Buy Now
+                </a>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+            <div class="product-card">
+
+                <div class="product-icon">🚀</div>
+
+                <h3>Productivity Bundle</h3>
+
+                <p>
+                    A complete collection of
+                    productivity website templates.
+                </p>
+
+                <div class="price">₱299</div>
+
+                <a
+                    href="https://flippa.com/lps/sell-websites/"
+                    target="_blank"
+                    class="buy-btn">
+                    Buy Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+
+        <div class="section-title">
+
+            <h2>About ProductiveKit</h2>
+
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                ProductiveKit creates clean, modern, and responsive
+                website templates designed to help people organize
+                their work and improve productivity.
+            </p>
+
+            <p>
+                Our templates are easy to customize and can be used
+                for personal projects, portfolios, student projects,
+                startups, and online businesses.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section id="faq">
+
+        <div class="section-title">
+
+            <h2>Frequently Asked Questions</h2>
+
+            <p>
+                Everything you need to know about our templates.
+            </p>
+
+        </div>
+
+
+        <div class="faq-container">
+
+            <div class="faq">
+
+                <h3>Are the templates responsive?</h3>
+
+                <p>
+                    Yes. The templates are designed to work
+                    on desktop, tablet, and mobile devices.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+                <h3>Can I customize the templates?</h3>
+
+                <p>
+                    Yes. You can edit the HTML and CSS to
+                    customize colors, text, images, and layouts.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+                <h3>What files are included?</h3>
+
+                <p>
+                    The website package can include HTML,
+                    CSS, JavaScript, images, and other related
+                    source files depending on the template.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+                <h3>How do I get the template?</h3>
+
+                <p>
+                    Click the Buy Now button to visit the
+                    current Flippa page.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>Ready to Work Smarter?</h2>
+
+        <p>
+            Explore ProductiveKit and find a template
+            for your next project.
+        </p>
+
+        <a
+            href="https://flippa.com/lps/sell-websites/"
+            target="_blank">
+            Visit Flippa
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 ProductiveKit. All rights reserved.
+        </p>
+
+        <p>
+            Productivity Website Templates
+        </p>
+
+    </footer>
+
+</body>
+</html>
